@@ -1,7 +1,7 @@
 # hacker-rank-solutions
 
 # Weighted mean
-`ruby`
+```ruby
 size = int(input())
 num = list(map(int,input().split()))
 wt  = list(map(int,input().split()))
