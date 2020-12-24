@@ -21,7 +21,9 @@ for n,w in zip(num,wt):
     res.append(n*w)
 print( round(sum(res)/sum(wt),1) )
 ```
-### 
+### Day 1: Quartiles
+Task
+Given an array, X, of  integers, calculate the respective first quartile (Q1), second quartile (Q2), and third quartile (Q3). It is guaranteed that ,Q1 ,Q2 and Q3 are integers.
 ```ruby
 size = int(input())
 num = list(map(int,input().split()))
