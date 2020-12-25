@@ -65,6 +65,8 @@ sd = (sum(sd_arr)/size)**0.5
 sd = round(sd,1)
 print(sd)
 ```
+### Day 1: Interquartile Range
+
 
 ```ruby
 size = int(input())
