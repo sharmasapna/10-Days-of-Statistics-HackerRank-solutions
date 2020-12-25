@@ -100,3 +100,5 @@ l1,r1,q1 = getmedian(l)
 l3,r3,q3 = getmedian(r)
 print((q3-q1)/1.0)
 ```
+5/6
+1/9
