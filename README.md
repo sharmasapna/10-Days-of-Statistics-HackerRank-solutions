@@ -173,4 +173,34 @@ for i in range(2,11):
 print(round(at,3))
     
 ```
+### Day 4: Geometric Distribution I
+
+
+```ruby
+values = list(map(float, input().split()))
+p = (values[0] / values[1])
+n = int(input())
+
+def gm(n,p):
+    return ((1-p)**(n-1) ) * p
+print(round( gm(n,p),3) )
+```
+### Day 4: Geometric Distribution II
+```ruby
+values = list(map(float, input().split()))
+p = (values[0] / values[1])
+n = int(input())
+
+def gm(n,p):
+    return ((1-p)**(n-1) ) * p
+res = 0
+for i in range (1,n+1):
+    res += gm(i,p)
+print(round(res,3))
+    
+
+```
+
+
+
 
