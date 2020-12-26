@@ -112,17 +112,35 @@ print((q3-q1)/1.0)
 
 
 ```ruby
-l = list(map(float,input().split()))
-b = l[0]
-g = l[1]
-p_boy = b/(b+g)
-p_girl = 1 - (b/(b+g))
-#print(b,g)
-n= 6 # total number of children
+# input
+values = list(map(float, input().split()))
+p = (values[0] / 100)
+n = int(values[1])
+
+def fact(n):
+    if n == 1 or n==0:
+        return 1
+    fact = 1
+    for val in range(1,n+1):
+        fact *= val
+    return fact
+
+def binom(x,n,p):
+    f =  fact(n)/(fact(n-x)*fact(x))
+    return f * (p**x ) * (1-p)**(n-x)
+
+
+
 boys = 3 # at least 3 boys
-p =(p_boy**3)*(p_girl**3)*20 + (p_boy**4)*(p_girl**2)*15 +(p_boy**5)*(p_girl**1)*6 + (p_boy**6)
+# Get binomial result
+p = binomial(3,n,p) + binomial(4,n,p) + binomial(5,n,p) + binomial(6,n,p)
+print(round(result, 3))
+
 print(round(p,3))
 ```
+
+
+
 ### Day 4: Binomial Distribution II
 
 ```ruby
