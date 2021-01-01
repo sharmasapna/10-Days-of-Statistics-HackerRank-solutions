@@ -197,8 +197,28 @@ res = 0
 for i in range (1,n+1):
     res += gm(i,p)
 print(round(res,3))
-    
 
+```
+### Day 5: Poisson Distribution I
+
+
+```ruby
+import math
+# input
+l = float(input())
+k = int(input())
+def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    res = 1
+    for val in range(1,n+1):
+        res = res*val
+    return res
+#print(fact(5))
+def pois(k,lmda):
+    p = (lmda**(k) * math.exp(-lmda)) / fact(k)
+    return(p)
+print(round(pois(k,l),3))
 ```
 
 
