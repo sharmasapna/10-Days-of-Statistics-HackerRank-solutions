@@ -1,4 +1,4 @@
-# hacker-rank-solutions
+# 10-Days-of-Statistics-HackerRank-solutions
 ###  statics-day0 - mean,median,mode
 ```ruby
 size = int(input())
