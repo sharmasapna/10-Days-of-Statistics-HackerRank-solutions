@@ -337,6 +337,70 @@ b = mean + z * (sd / math.sqrt(sample_size))
 print (round(a,2))
 print (round(b,2))
 ```
+### Day 7: Pearson Correlation Coefficient I
+
+
+```ruby
+import statistics
+size = int(input())
+x = list(map(float,input().split()))
+y = list(map(float,input().split()))
+mean_x,mean_y = statistics.mean(x) , statistics.mean(y)
+sd_x,sd_y = statistics.pstdev(x),statistics.pstdev(y)
+num =0
+for a,b in zip(x,y):
+    num += (a-mean_x)*(b-mean_y)
+pcc = num/(size*sd_x*sd_y)
+print(round(pcc,3))
+```
+### Day 7: Spearman's Rank Correlation Coefficient
+```ruby
+size = int(input())
+x = list(map(float,input().split()))
+y = list(map(float,input().split()))
+
+rank_x = []
+for val in x:
+    rank = sorted(x).index(val) +1
+    rank_x.append(rank)
+
+rank_y = []
+for val in y:
+    rank = sorted(y).index(val) +1
+    rank_y.append(rank)
+
+d=0
+for a,b in zip(rank_x,rank_y):
+    d += (a-b)**2
+srcc = 1 - 6*d/((size**2-1)*size)
+    
+print(round(srcc,3))
+
+```
+### Day 8: Least Square Regression Line
+```ruby
+x = [95,85,80,70,60]
+y = [85,95,70,65,70]
+mean_x,mean_y = sum(x)/len(x), sum(y)/len(y)
+x_square = 0
+xy = 0
+for a,b in zip(x,y):
+    x_square += a**2
+    xy += a*b
+n = len(x)
+# calculating the slope
+b = ( n*xy - sum(x)*sum(y)) / (n*x_square - (sum(x))**2 )
+
+# calculating the intercept
+a = mean_y - b*mean_x
+
+y_pred  = a + b* 80
+print(round(y_pred,3))
+```
+###
+
+
+
 
 
 
