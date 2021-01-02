@@ -286,5 +286,57 @@ print(round(p1*100,2))
 print(round(p2*100,2))
 print(round(p3*100,2))
 ```
+### Day 6: The Central Limit Theorem I
+```ruby
+import math
+max_wt = float(input())
+num_boxes = float(input())
+mean = float(input())
+sd = float(input())
+var = sd**2
+mean_prime = num_boxes * mean
+sd_prime = (num_boxes**(0.5)) * sd
+var_prime = num_boxes * (sd**2)
+
+
+def cum_pdf(x,mean,var):
+    return 0.5*(1 + math.erf( (x-mean)/(2*var)**(0.5) ))
+p = cum_pdf(max_wt,mean_prime,var_prime)
+print(round(p,4))
+```
+### Day 6: The Central Limit Theorem II
+```ruby
+import math
+last_min = float(input())
+num_students = float(input())
+mean = float(input())
+sd = float(input())
+var = sd**2
+mean_prime = num_students * mean
+sd_prime = (num_students**(0.5)) * sd
+var_prime = num_students * (sd**2)
+
+
+def cum_pdf(x,mean,var):
+    return 0.5*(1 + math.erf( (x-mean)/(2*var)**(0.5) ))
+p = cum_pdf(last_min,mean_prime,var_prime)
+print(round(p,4))
+```
+### Day 6: The Central Limit Theorem III
+```ruby
+import math
+sample_size = float(input())
+mean = float(input())
+sd = float(input())
+per_cover = float(input())
+z = float(input())
+
+a = mean - z * (sd / math.sqrt(sample_size))
+b = mean + z * (sd / math.sqrt(sample_size))
+
+print (round(a,2))
+print (round(b,2))
+```
+
 
 
