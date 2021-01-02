@@ -205,7 +205,34 @@ def pois(k,lmda):
     return(p)
 print(round(pois(k,l),3))
 ```
+### Day 5: Poisson Distribution II
+```ruby
+import math
+# input
+means = list(map(float,input().split(" ")))
+mean_a, mean_b = float(means[0]), float(means[1])
+# factorial
+def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    res = 1
+    for val in range(1,n+1):
+        res = res*val
+    return res
+#print(fact(5))
+# poison calculation
+def pois(k,lmda):
+    p = (lmda**(k) * math.exp(-lmda)) / fact(k)
+    return(p)
+# calculating the expected value
+exp_a=0
+exp_b=0
+for val in range(100):
+    exp_a += (160 + 40 * (val**2)) * pois(val,mean_a)
+    exp_b += (128 + 40 * (val**2)) * pois(val,mean_b)
 
-
+print(round(exp_a,3))
+print(round(exp_b,3))
+```
 
 
