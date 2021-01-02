@@ -233,6 +233,58 @@ for val in range(100):
 
 print(round(exp_a,3))
 print(round(exp_b,3))
+
+```
+### Day 5: Normal Distribution I
+```ruby
+import math
+# input
+nd = list(input().split(" "))
+mean = float(nd[0])
+var  = float(nd[1])**2
+less_than = float(input())
+range_ = list(input().split(" "))
+from_val = float(range_[0])
+to_val   = float(range_[1])
+
+
+def cum_pdf(x,mean,var):
+    return 0.5*(1 + math.erf( (x-mean)/(2*var)**(0.5) ))
+
+
+# less than 19.5 hours
+
+p1 = cum_pdf(less_than,mean,var)
+
+# between 20 and 22
+
+p2 = cum_pdf(to_val,mean,var) - cum_pdf(from_val,mean,var) 
+print(round(p1,3))
+print(round(p2,3))
+```
+
+### Day 5: Normal Distribution II
+```ruby
+import math
+# input
+nd = list(input().split(" "))
+mean = float(nd[0])
+var  = float(nd[1])**2
+more_than = int(input())
+less_than = int(input()) 
+
+
+def cum_pdf(x,mean,var):
+    return 0.5*(1 + math.erf( (x-mean)/(2*var)**(0.5) ))
+
+p1 = cum_pdf(more_than,mean,var)
+p1 = 1-p1
+p2 = cum_pdf(less_than,mean,var) 
+p2 = 1-p2
+p3 = cum_pdf(less_than,mean,var) 
+print(round(p1*100,2))
+print(round(p2*100,2))
+print(round(p3*100,2))
 ```
 
 
